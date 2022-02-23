@@ -1,0 +1,65 @@
+             PROGRAM FOR Construction of NFA from REGULAR EXPRESSION 
+
+
+
+CODE in C++:
+
+#include<iostream>
+using namespace std;
+struct node{
+char start;
+char alp;	
+node *next;
+}*p,*p1,*p2,*p3,*p4,*p5,*p6,*p7,*p8,*ptr;
+
+int main()
+{
+p=new (node);
+p1=new (node);
+p2=new (node);
+p3=new (node);
+p4=new (node);
+p5=new (node);
+p6=new (node);
+p7=new (node);
+p8=new (node);
+
+p->start=0;
+p->alp='e';
+p->next=p1;
+p1->start='1';
+p1->alp='a';
+p1->next=p2;
+p2->start='2';
+
+p2->alp='e';
+p2->next=p3;
+p3->start='5';
+p3->alp='c';
+p3->next=p4;
+p4->start='6';
+p4->alp='d';
+p4->next=p5;
+p5->start='7';
+p5->alp='E';
+p5->next=p6;
+p6->start='8';
+p6->alp='e';
+p6->next=NULL;
+p7->start='0';
+p7->alp='e';
+p7->next=p5;
+p8->start='0';
+p8->alp='e';
+p8->next=p4;
+ptr=p;
+cout<<"The NFA to DFA Conversion is: \n";
+while(ptr!=NULL)
+{
+cout<<" - "<< ptr->start<<" - "<<ptr->alp; 
+ptr=ptr->next;
+
+}
+
+return 0;
+}
